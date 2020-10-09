@@ -17,6 +17,10 @@ $body = "Este es el mensaje de la pagina web.\n\n"."Estos son los detalles:\n\nN
 $header = "From: cris.mundo@outlook.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
 $header .= "Reply-To: $email";	
 
-if(!mail($to, $subject, $body, $header))
-  http_response_code(500);
+if(mail($to, $subject, $body, $header)){
+  echo 'Your mail has been sent successfully.';
+}else{
+  echo 'Unable to send email. Please try again.';
+}
+  
 ?>
